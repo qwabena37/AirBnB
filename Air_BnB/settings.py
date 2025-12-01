@@ -134,3 +134,7 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 
 }
+
+HUBTEL_CLIENT_ID = "your_client_id_here"
+HUBTEL_CLIENT_SECRET = "your_client_secret_here"
+HUBTEL_MERCHANT_ID = "your_merchant_id_here"
