@@ -20,17 +20,15 @@ def home(request):
 class PropertyListCreateView(generics.ListCreateAPIView):
     queryset = Property.objects.all().order_by("-created_at")
     serializer_class = PropertySerializer
+    # add filter backend
+    filter_backends = [DjangoFilterBackend]
+    # fields you want to be able to filter by
+    filterset_fields = ['city', 'available']
 
 class PropertyRetrieveView(generics.RetrieveAPIView):
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
 
-
-# add filter backend
-    filter_backends = [DjangoFilterBackend]
-
-    # fields you want to be able to filter by
-    filterset_fields = ['city', 'available']
 
 class HubtelMoMoPaymentView(APIView):
     def post(self, request):

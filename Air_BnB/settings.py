@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     # third-party
     "rest_framework",
     #"drf_yasg",   # uncomment if you installed it and want swagger
-
+    'django_filters'
     # local apps
     "listings",
 ]
