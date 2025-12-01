@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     # third-party
     "rest_framework",
-    "drf_yasg",   # uncomment if you installed it and want swagger
+    #"drf_yasg",   # uncomment if you installed it and want swagger
 
     # local apps
     "listings",
