@@ -2,6 +2,8 @@ from rest_framework import generics
 from .models import Property
 from .serializers import PropertySerializer
 from django.http import HttpResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -59,7 +61,7 @@ class HubtelMoMoPaymentView(APIView):
             "CallbackUrl": "https://yourdomain.com/hubtel/payment/callback/",
             "Reason": description,
             "Metadata": {
-                "Product": "ALX Travel Booking"
+                "Product": "Jay AirBnB Booking"
             }
         }
 
@@ -72,3 +74,15 @@ class HubtelMoMoPaymentView(APIView):
                 "error": "Payment request failed",
                 "details": response.json()
             }, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+def api_home(request):
+    return Response({
+        "message": "Welcome to Jay AirBnB API",
+        "endpoints": {
+            "properties": "/properties/",
+            "payment": "/hubtel-momo/",
+            "swagger": "/swagger/",
+            "admin": "/admin/"
+        }
+    })
