@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # third-party
+    "rest_framework",
+     "drf_yasg",   # uncomment if you installed it and want swagger
+
+    # local apps
+    "listings",
 ]
 
 MIDDLEWARE = [
