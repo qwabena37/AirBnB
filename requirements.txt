@@ -1,0 +1,4 @@
+Django>=4.2,<5
+djangorestframework>=3.14
+# optional swagger, remove if giving drf_yasg problems
+drf-yasg>=1.22.0
